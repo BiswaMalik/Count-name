@@ -21,13 +21,7 @@ app.get("/", (req, res) => {
 
 
 app.post("/submit", (req, res) => {
-  const fName = req.body.fName;
-  const lName = req.body.lName;
-
-  const fNameLength = fName.length;
-  const lNameLength = lName.length;
-
-  const len = fNameLength + lNameLength;
+const len = req.body["fName"].length + req.body["lName"].length;
  
  res.render("index.ejs",{number:len});
 });
